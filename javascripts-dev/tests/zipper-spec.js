@@ -4,6 +4,10 @@ describe("Zipper", function() {
   var zip = Zipper.zip;
   var testPaths = Files.all
 
+  beforeEach(function() {
+    avoidRealZipDownload();
+  });
+
   it("adds files to the zip", function() {
     spyOn(zip, "file");
     Zipper.createZip(Downloader, testPaths);
@@ -49,4 +53,7 @@ describe("Zipper", function() {
     });
   });
 
+  function avoidRealZipDownload() {
+    spyOn(zip, "generateAsync").and.returnValue(new Promise( function() {} ));
+  }
 });
