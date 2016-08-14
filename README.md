@@ -8,6 +8,8 @@ This is a [GitHub Pages](https://pages.github.com/) repo, so you can render the 
 2. `bundle exec jekyll serve`
 3. go to http://127.0.0.1:4000
 
+If you are just updating or adding new tutorials, follow steps 1 to 3 only.
+
 If you also want to make changes to the structure of the site (i.e. if you want to modify the site's Javascript files) and run the tests, first make sure you have a recent version of npm (node) installed. Then do:
 
 ```bash
@@ -18,8 +20,6 @@ $ gulp
 and then go to http://localhost:4000/test/specrunner.html to run the tests. Tests should be green.
 
 > *Gulp is only used for development, not in production. In your local copy of this repo, it will concatenate and minify the files inside the `javascripts-dev` folder, as well as watch for changes in that folder. The concatenated and minified JS file will be generated inside the `javascripts` folder. You can push both folders when you are finished with your changes. GitHub pages will then  generate the site in production with whatever is inside the `javascripts` folder.*
-
-If you are just updating or adding new tutorials, follow steps 1 to 3 only.
 
 ## Getting in Touch
 
@@ -56,7 +56,7 @@ We encourage you to contribute with your suggestions and corrections. Head to ou
 ```bash
 js/lesson3/
 ├── assets/
-├── files/
+├── exercise1/
 │   ├── index.html
 │   ├── jquery.js
 │   ├── script.js
@@ -71,19 +71,20 @@ js/lesson3/
 layout: page
 title: Introduction to jQuery
 files:
-  - files/index.html
-  - files/jquery.js
-  - files/script.js
-  - files/style.css
+  - exercise1:
+    - index.html
+    - jquery.js
+    - script.js
+    - style.css
 ---
 ```
 
-- In the copy of the tutorial, add your link to the files, **making it point to just `download`:**
+- In the copy of the tutorial, add your link to the files, **making it point to `#download-foldername`:**. For example:
 
 
 ```markdown
 Download the files that you will need to work through the example
-[here](download).
+[here](#download-exercise1).
 ```
 
 And you're done. Commit and push as usual.
